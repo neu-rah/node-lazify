@@ -1,6 +1,6 @@
 {
   "name": "node-lazify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create lazy versions of functions and constructors.",
   "main": "node-lazify.js",
   "scripts": {
@@ -21,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/neu-rah/node-lazify/issues"
   },
-  "homepage": "https://github.com/neu-rah/node-lazify#readme"
+  "homepage": "https://github.com/neu-rah/node-lazify#readme",
+  "dependencies" : {
+    "harmony-proxy" : ">=0.1.0.0",
+    "harmony-reflect" : ">=1.4.2"
+  }
 }

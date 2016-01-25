@@ -1,9 +1,17 @@
 # node-lazify
 
 Lazify node functions returning ES6 proxy as result.
-The code execution is delayed and started by output need
 
-ES6 Proxies allow javascript laziness to be transparent.
+The code execution is delayed and started by output need, ES6 Proxies allow javascript laziness to be transparent.
+
+for now this package need to:
+
+   1- run with node --harmony-proxies
+   
+   2- and use the 'harmony-proxy' for ES6 syntax
+
+check latter if this is still needed
+
 
 ```javascript
 "use strict";
