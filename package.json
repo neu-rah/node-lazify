@@ -1,0 +1,25 @@
+{
+  "name": "node-lazify",
+  "version": "1.0.0",
+  "description": "create lazy versions of functions and constructors.",
+  "main": "node-lazify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-rah/node-lazify.git"
+  },
+  "keywords": [
+    "lazy",
+    "functions",
+    "and",
+    "constructors"
+  ],
+  "author": "Rui Azevedo <ruihfazevedo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neu-rah/node-lazify/issues"
+  },
+  "homepage": "https://github.com/neu-rah/node-lazify#readme"
+}

@@ -1,11 +1,3 @@
-# node-lazify
-
-Lazify node functions returning ES6 proxy as result.
-The code execution is delayed and started by output need
-
-ES6 Proxies allow javascript laziness to be transparent.
-
-```javascript
 "use strict";
 
 var lazy=require("./node-lazify");
@@ -35,6 +27,4 @@ console.log("results------------------------------");
 //execution occours here when needed to use the values
 console.log(o.test("final test"));
 console.log(n+0,o.name);
-console.log(JSON.stringify(o.valueOf()));//still this JSON thing need the valueOf... something is not quite complete
-
-```
+console.log(JSON.stringify(o.valueOf()));
