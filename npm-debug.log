@@ -1,0 +1,178 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install', '.' ]
+2 info using npm@3.3.12
+3 info using node@v5.4.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData harmony-reflect
+20 silly mapToRegistry name harmony-reflect
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/harmony-reflect
+24 silly fetchNamedPackageData harmony-proxy
+25 silly mapToRegistry name harmony-proxy
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry uri https://registry.npmjs.org/harmony-proxy
+29 verbose request uri https://registry.npmjs.org/harmony-reflect
+30 verbose request no auth needed
+31 info attempt registry request try #1 at 21:49:00
+32 verbose request using bearer token for auth
+33 verbose request id 9e3567e9a23cd77c
+34 verbose etag "7UKPV0Y2NZHD6R1A9ZH36I4IT"
+35 http request GET https://registry.npmjs.org/harmony-reflect
+36 verbose request uri https://registry.npmjs.org/harmony-proxy
+37 verbose request no auth needed
+38 info attempt registry request try #1 at 21:49:00
+39 verbose request using bearer token for auth
+40 verbose etag "2A2Q06LLTANNCNKCPNL54EZW3"
+41 http request GET https://registry.npmjs.org/harmony-proxy
+42 http 304 https://registry.npmjs.org/harmony-reflect
+43 verbose headers { 'cache-control': 'max-age=300',
+43 verbose headers   'accept-ranges': 'bytes',
+43 verbose headers   date: 'Mon, 25 Jan 2016 22:49:01 GMT',
+43 verbose headers   via: '1.1 varnish',
+43 verbose headers   connection: 'keep-alive',
+43 verbose headers   'x-served-by': 'cache-lcy1128-LCY',
+43 verbose headers   'x-cache': 'MISS',
+43 verbose headers   'x-cache-hits': '0',
+43 verbose headers   'x-timer': 'S1453762141.064072,VS0,VE150' }
+44 silly get cb [ 304,
+44 silly get   { 'cache-control': 'max-age=300',
+44 silly get     'accept-ranges': 'bytes',
+44 silly get     date: 'Mon, 25 Jan 2016 22:49:01 GMT',
+44 silly get     via: '1.1 varnish',
+44 silly get     connection: 'keep-alive',
+44 silly get     'x-served-by': 'cache-lcy1128-LCY',
+44 silly get     'x-cache': 'MISS',
+44 silly get     'x-cache-hits': '0',
+44 silly get     'x-timer': 'S1453762141.064072,VS0,VE150' } ]
+45 verbose etag https://registry.npmjs.org/harmony-reflect from cache
+46 verbose get saving harmony-reflect to /home/azevedo/.npm/registry.npmjs.org/harmony-reflect/.cache.json
+47 silly resolveWithNewModule harmony-reflect@1.4.2 checking installable status
+48 silly cache add args [ 'harmony-reflect@>=1.4.2', null ]
+49 verbose cache add spec harmony-reflect@>=1.4.2
+50 silly cache add parsed spec Result {
+50 silly cache add   raw: 'harmony-reflect@>=1.4.2',
+50 silly cache add   scope: null,
+50 silly cache add   name: 'harmony-reflect',
+50 silly cache add   rawSpec: '>=1.4.2',
+50 silly cache add   spec: '>=1.4.2',
+50 silly cache add   type: 'range' }
+51 silly addNamed harmony-reflect@>=1.4.2
+52 verbose addNamed ">=1.4.2" is a valid semver range for harmony-reflect
+53 silly addNameRange { name: 'harmony-reflect', range: '>=1.4.2', hasData: false }
+54 silly mapToRegistry name harmony-reflect
+55 silly mapToRegistry using default registry
+56 silly mapToRegistry registry https://registry.npmjs.org/
+57 silly mapToRegistry uri https://registry.npmjs.org/harmony-reflect
+58 verbose addNameRange registry:https://registry.npmjs.org/harmony-reflect not in flight; fetching
+59 verbose get https://registry.npmjs.org/harmony-reflect not expired, no request
+60 silly addNameRange number 2 { name: 'harmony-reflect', range: '>=1.4.2', hasData: true }
+61 silly addNameRange versions [ 'harmony-reflect',
+61 silly addNameRange   [ '0.0.1',
+61 silly addNameRange     '0.0.2',
+61 silly addNameRange     '0.0.3',
+61 silly addNameRange     '0.0.4',
+61 silly addNameRange     '0.0.5',
+61 silly addNameRange     '0.0.6',
+61 silly addNameRange     '0.0.7',
+61 silly addNameRange     '0.0.8',
+61 silly addNameRange     '0.0.9',
+61 silly addNameRange     '0.0.10',
+61 silly addNameRange     '0.0.11',
+61 silly addNameRange     '0.0.12',
+61 silly addNameRange     '0.0.13',
+61 silly addNameRange     '1.0.0',
+61 silly addNameRange     '1.0.1',
+61 silly addNameRange     '1.1.0',
+61 silly addNameRange     '1.1.1',
+61 silly addNameRange     '1.1.2',
+61 silly addNameRange     '1.1.3',
+61 silly addNameRange     '1.2.0',
+61 silly addNameRange     '1.2.1',
+61 silly addNameRange     '1.3.0',
+61 silly addNameRange     '1.3.1',
+61 silly addNameRange     '1.4.0',
+61 silly addNameRange     '1.4.1',
+61 silly addNameRange     '1.4.2' ] ]
+62 silly addNamed harmony-reflect@1.4.2
+63 verbose addNamed "1.4.2" is a plain semver version for harmony-reflect
+64 silly cache afterAdd harmony-reflect@1.4.2
+65 verbose afterAdd /home/azevedo/.npm/harmony-reflect/1.4.2/package/package.json not in flight; writing
+66 verbose afterAdd /home/azevedo/.npm/harmony-reflect/1.4.2/package/package.json written
+67 http 304 https://registry.npmjs.org/harmony-proxy
+68 verbose headers { 'cache-control': 'max-age=300',
+68 verbose headers   'accept-ranges': 'bytes',
+68 verbose headers   date: 'Mon, 25 Jan 2016 22:49:01 GMT',
+68 verbose headers   via: '1.1 varnish',
+68 verbose headers   connection: 'keep-alive',
+68 verbose headers   'x-served-by': 'cache-lhr6323-LHR',
+68 verbose headers   'x-cache': 'MISS',
+68 verbose headers   'x-cache-hits': '0',
+68 verbose headers   'x-timer': 'S1453762141.089324,VS0,VE609' }
+69 silly get cb [ 304,
+69 silly get   { 'cache-control': 'max-age=300',
+69 silly get     'accept-ranges': 'bytes',
+69 silly get     date: 'Mon, 25 Jan 2016 22:49:01 GMT',
+69 silly get     via: '1.1 varnish',
+69 silly get     connection: 'keep-alive',
+69 silly get     'x-served-by': 'cache-lhr6323-LHR',
+69 silly get     'x-cache': 'MISS',
+69 silly get     'x-cache-hits': '0',
+69 silly get     'x-timer': 'S1453762141.089324,VS0,VE609' } ]
+70 verbose etag https://registry.npmjs.org/harmony-proxy from cache
+71 verbose get saving harmony-proxy to /home/azevedo/.npm/registry.npmjs.org/harmony-proxy/.cache.json
+72 silly fetchPackageMetaData Error: No compatible version found: harmony-proxy@>=0.1.0.0
+72 silly fetchPackageMetaData Valid install targets:
+72 silly fetchPackageMetaData 0.1.0, 0.0.2, 0.0.1
+72 silly fetchPackageMetaData
+72 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:156:16)
+72 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+72 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:19:8
+72 silly fetchPackageMetaData     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:168:7)
+72 silly fetchPackageMetaData     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+72 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:82:15)
+72 silly fetchPackageMetaData  error for harmony-proxy@>=0.1.0.0 [Error: No compatible version found: harmony-proxy@>=0.1.0.0
+72 silly fetchPackageMetaData Valid install targets:
+72 silly fetchPackageMetaData 0.1.0, 0.0.2, 0.0.1
+72 silly fetchPackageMetaData ]
+73 silly rollbackFailedOptional Starting
+74 silly rollbackFailedOptional Finishing
+75 silly runTopLevelLifecycles Starting
+76 silly runTopLevelLifecycles Finishing
+77 silly install printInstalled
+78 verbose stack Error: No compatible version found: harmony-proxy@>=0.1.0.0
+78 verbose stack Valid install targets:
+78 verbose stack 0.1.0, 0.0.2, 0.0.1
+78 verbose stack
+78 verbose stack     at pickVersionFromRegistryDocument (/usr/local/lib/node_modules/npm/lib/fetch-package-metadata.js:156:16)
+78 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:13:50
+78 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/pulse-till-done.js:19:8
+78 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:168:7)
+78 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+78 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
+79 verbose cwd /home/azevedo/code/nodes/node-lazify
+80 error Linux 3.16.0-41-generic
+81 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "."
+82 error node v5.4.0
+83 error npm  v3.3.12
+84 error No compatible version found: harmony-proxy@>=0.1.0.0
+84 error Valid install targets:
+84 error 0.1.0, 0.0.2, 0.0.1
+85 error If you need help, you may report this error at:
+85 error     <https://github.com/npm/npm/issues>
+86 verbose exit [ 1, true ]

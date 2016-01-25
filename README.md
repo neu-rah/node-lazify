@@ -7,8 +7,8 @@ The code execution is delayed and started by output need, ES6 Proxies allow java
 for now this package need to:
 
    1- run with node --harmony-proxies
-   
-   2- and use the 'harmony-proxy' for ES6 syntax
+
+   2- and use the 'harmony-proxy' and 'harmony-reflect' for ES6 syntax
 
 check latter if this is still needed
 
