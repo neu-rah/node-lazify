@@ -24,14 +24,10 @@ var Obj=lazy(Obj);//lazify object construction
 //use the lazified stuff as if not
 var n=f(10);//lazy call
 var o=new Obj("o");//lazy construction
-var testmod=lazy(require)("../testmod");
-//var ctrl=require("../testmod");
 
 //till now nothing happens, no calcs done, no objects constructed
 console.log("results------------------------------");
 //execution occours here when needed to use the values
-//console.log(typeof testmod);
 console.log(o.test("final test"));
 console.log(n+0,o.name);
 console.log(JSON.stringify(o.valueOf()));
-//var x=new Proxy(require("../testmod"),{})

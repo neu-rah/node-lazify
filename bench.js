@@ -11,7 +11,8 @@ function lazy(f) {
     var args=arguments;//Array.prototype.slice.call(arguments);
     var memo=function memoizer(t,o,args) {
       let nv=(t?new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args)))):f.apply(o,args));
-      return memo=()=>nv;
+      memo=()=>nv;
+      return nv;
     }
     return new Proxy({},
       {
