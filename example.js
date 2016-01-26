@@ -1,6 +1,6 @@
 "use strict";
 
-var log=console.log(o);
+var log=console.log;
 var lazy=require("./node-lazify");
 var Proxy = require('harmony-proxy');
 var Reflect = require('harmony-reflect');
@@ -35,13 +35,3 @@ console.log(o.test("final test"));
 console.log(n+0,o.name);
 console.log(JSON.stringify(o.valueOf()));
 //var x=new Proxy(require("../testmod"),{})
-
-function reflex(o) {
-  var _={};
-  for(var i in Reflect) {
-    _[i]=Reflect[i].bind(o);
-  }
-  return _;
-}
-
-var a=reflex([1,2,3]);

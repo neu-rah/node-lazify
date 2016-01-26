@@ -32,7 +32,7 @@ module.exports= function lazy(f) {
        get(target, trapName, receiver) {
           var o=memoizer(self,target,args);
           var trap=o[trapName]||Reflect[trapName]||undefined;
-          return trap.bind?trap.bind(o):trap;
+          return trap&&(trap.bind?trap.bind(o):trap);
        }
      });
    }

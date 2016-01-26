@@ -1,6 +1,6 @@
 {
   "name": "node-lazify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "create lazy versions of functions and constructors.",
   "main": "node-lazify.js",
   "scripts": {
