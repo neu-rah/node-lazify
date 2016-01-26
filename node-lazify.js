@@ -14,18 +14,19 @@
 
 //this aproach has severe problems to cope with the possible return type
 //problems when the result type is a function... and so on...
-//TODO: find a way to not polute the the target with memo and preserve closures
+//DONE: find a way to not polute the the target with memo and preserve closures -> use local scope
 var Proxy = require('harmony-proxy');
 var Reflect = require('harmony-reflect');
 
 module.exports= function lazy(f) {
   return function lazyfied() {
+    var memo;
     var self=this;
     var args=arguments;//Array.prototype.slice.call(arguments);
     function memoizer(t,o,args) {
-      return o.memo||(t?
+      return memo||(memo=(t?
         new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args))))
-        :(o.memo=f.apply(o,args)));
+        :f.apply(o,args)));
     }
     return new Proxy({},
       {
