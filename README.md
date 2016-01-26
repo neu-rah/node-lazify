@@ -12,6 +12,9 @@ for now this package need to:
 
 check latter if this is still needed
 
+this is quite experimental and I still have problems to deal with some return value types...
+
+see notes on code.
 
 ```javascript
 "use strict";

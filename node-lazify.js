@@ -6,6 +6,15 @@
 
 //this can turn a hell of debug i guess
 
+// i would be happier by just changing the proxy target instead of the memoizer thing
+// therefor the original target would get the value (no pre-checking needed) and replace himself for good, no further checkings
+// would be much faster
+// also the new operator is a pain
+// and the this bind stuff, proxy should connect to the outter word as the target object, but that does not depend on proxy but to js
+
+//this aproach has severe problems to cope with the possible return type
+//problems when the result type is a function... and so on...
+//TODO: find a way to not polute the the target with memo and preserve closures
 var Proxy = require('harmony-proxy');
 var Reflect = require('harmony-reflect');
 
@@ -14,17 +23,16 @@ module.exports= function lazy(f) {
     var self=this;
     var args=arguments;//Array.prototype.slice.call(arguments);
     function memoizer(t,o,args) {
-      return t?
-        (o.memo||(o.memo=new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args)))) ))
-        :( o.memo || (o.memo=f.apply(o,args)) );
+      return o.memo||(t?
+        new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args))))
+        :(o.memo=f.apply(o,args)));
     }
     return new Proxy({},
       {
        get(target, trapName, receiver) {
           var o=memoizer(self,target,args);
-          if(o[trapName]) return o[trapName].bind?o[trapName].bind(o):o[trapName];
-          else return Reflect[trapName]&&Reflect[trapName].apply(o,Array.prototype.slice.call(arguments,1));
-          return undefined;
+          var trap=o[trapName]||Reflect[trapName]||undefined;
+          return trap.bind?trap.bind(o):trap;
        }
      });
    }
