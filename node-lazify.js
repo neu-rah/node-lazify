@@ -22,18 +22,22 @@ module.exports= function lazy(f) {
   return function lazyfied() {
     var self=this;
     var args=arguments;//Array.prototype.slice.call(arguments);
-    var memo=function memoizer(t,o,args) {
-      let nv=(t?new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args)))):f.apply(o,args));
+    var memo=function memoizer() {
+      let nv=(self?new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args)))):f.apply(self,args));
       memo=()=>nv;
       return nv;
     }
     return new Proxy({},
       {
-       get(target, trapName, receiver) {
-          var o=memo(self,target,args);
-          var trap=o[trapName]||Reflect[trapName]||undefined;
-          return trap&&(trap.bind?trap.bind(o):trap);
-       }
+        get(target, trapName, receiver) {
+           var o=memo();
+           var trap=o[trapName];
+           return trap&&(trap.bind?trap.bind(o):trap);
+        },
+        set(t, p, v) {
+           var o=memo();
+           o[p]=v;
+        }
      });
    }
 }
