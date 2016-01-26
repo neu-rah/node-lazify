@@ -7,18 +7,16 @@ var Reflect = require('harmony-reflect');
 
 function lazy(f) {
   return function lazyfied() {
-    var memo;
     var self=this;
     var args=arguments;//Array.prototype.slice.call(arguments);
-    function memoizer(t,o,args) {
-      return memo||(memo=(t?
-        new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args))))
-        :f.apply(o,args)));
+    var memo=function memoizer(t,o,args) {
+      let nv=(t?new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args)))):f.apply(o,args));
+      return memo=()=>nv;
     }
     return new Proxy({},
       {
        get(target, trapName, receiver) {
-          var o=memoizer(self,target,args);
+          var o=memo(self,target,args);
           var trap=o[trapName]||Reflect[trapName]||undefined;
           return trap&&(trap.bind?trap.bind(o):trap);
        }
