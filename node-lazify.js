@@ -19,11 +19,10 @@ var Proxy = require('harmony-proxy');
 var Reflect = require('harmony-reflect');
 
 module.exports= function lazy(f) {
-  return function lazyfied() {
+  return function lazyfied(...args) {
     var self=this;
-    var args=arguments;//Array.prototype.slice.call(arguments);
     var memo=function memoizer() {
-      let nv=(self?new (Function.prototype.bind.apply(f,[f].concat(Array.prototype.slice.call(args)))):f.apply(self,args));
+      let nv=(self?new (Function.prototype.bind.apply(f,[f].concat(args))):f.apply(self,args));
       memo=()=>nv;
       return nv;
     }
